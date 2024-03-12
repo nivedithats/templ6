@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #message{
+            width: 400px;
+            padding: 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: green;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            color: #fff;
+            display: none;
+
+        }
+        .hide{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+
+    <center>
+        <h1>Navigator (browser information and OS information)</h1>
+    </center>
+    <div id="result">
+
+    </div>
+
+    <div id="message" class="show">
+        <p style="font-size: 2rem;" onclick="OnlineChecker()">&time;</p>
+        <p>You are in onLine</p>
+
+    </div>
+    <button onclick="OnlineChecker()">check onLine</button>
+
+    <script>
+        console.log(navigator)
+        let result = document.querySelector('#result')
+        result.innerHTML += `<h3>navigator.appName:${navigator.appName}</h3>`
+        result.innerHTML += `<h3>navigator.appVersion:${navigator.appVersion}</h3>`
+        result.innerHTML += `<h3>navigator.clipboard:${navigator.clipboard}</h3>`
+
+
+        result.innerHTML += `<h3>navigator.languages:${navigator.languages}</h3>`
+        result.innerHTML += `<h3>navigator.login:${navigator.login}</h3>`
+        result.innerHTML += `<h3>navigator.cookieEnabled:${navigator.cookieEnabled}</h3>`
+
+        //to check internet connection it will returns true or false
+        result.innerHTML = `<h3>navigator.isOnline:${navigator.onLine}</h3>`
+
+        function OnlineChecker(){
+            if(navigator.onLine == true){
+            message.classList.toggle('hide')
+        }
+        else{
+            message.style.background = "red"
+        }
+
+    }
+
+
+        
+
+
+        
+
+        
+        
+    </script>
+</body>
+</html>

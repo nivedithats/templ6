@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h3>alert</h3>
+        <h3>confirm</h3>
+        <h3>prompt</h3>
+        <p id="result"></p>
+        <button onclick="alertmsg()">get alert msg</button>
+        <button onclick="confirmmsg()">get  confirm msg</button>
+        <button onclick="promptmsg()">get  prompt value</button><br/>
+    </center>
+    <script>
+        let result=document.getElementById("result");
+        function alertmsg(){
+            alert('this is alert message');
+        }
+        function confirmmsg(){
+            var confirm1=confirm('do you want add this ')
+            if(confirm1==true){
+                result.innerText="you clicked ok"
+            }
+            else{
+                result.innerText="you clicked cancel"
+            }
+    }
+
+    function promptmsg(){
+        var firstNumber=prompt('enter first number');
+        var secondNumber=prompt('enter second number');
+        //we use the => parseInt(prompt('enter first number'))
+        // parseInt(prompt('enter second number'))
+        var result=Number(firstNumber)+Number(secondNumber);
+        alert("result is:"+result);    
+    }
+
+    </script>
+</body>
+</html>

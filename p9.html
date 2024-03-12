@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+</head>
+<body>
+    <center>
+        <h1>To run code every time</h1>
+    </center>
+
+<button onclick=" simpleAlert()">Show alert after two seconds</button>
+<button onclick="delayedAlert()">cancel the alert message time</button>
+    
+    <script>
+        function showAlert(){
+            alert('hi how are you')
+
+        }
+        //the setInterval is used run any code at every time
+        //showAlert()
+              setInterval('showAlert()',5000)//milli seconds
+
+
+
+
+
+
+//the setTimeout function  is used to run any code after some time
+              function simpleAlert(){
+                alert('This is the late message')
+              }
+              function delayAlert(){
+                setTimeout(simpleAlert,2000)
+              }
+    </script>
+</body>
+</html>

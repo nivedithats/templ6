@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Open Window</h1>
+    </center>
+    <hr>
+    <button onclick="openWindow()">Open Window</button>
+    <button onclick="closeWindow()">Close Window</button>
+
+
+
+
+    <script>
+        let mywindow ;
+        let windowProps = "width=300,height=300,left=10,top=10,toolbar=yes,scrollable=yes,resizable=yes"
+
+
+        function openWindow (){
+            mywindow = window.open('https://be-practical-blond.vercel.app',"",windowProps)
+            mywindow = window.open('./example.html',"",windowProps)
+        }
+
+        function closeWINDOW(){
+            mywindow.close();/*it will closes newly opened windows only*/
+        }
+    </script>
+</body>
+</html>

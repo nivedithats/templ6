@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="time">
+        <span id="seconds">00</span>
+        <span>:</span>
+        <span id="milliSeconds">00</span>
+    </div>
+    <button onclick="startTime()">Srart</button>
+    <button onclick="stopTime()">Stop</button>
+<button onclick="setFlag()">Flag </button>
+<ul id="flag"></ul>
+
+
+
+    <script>
+        var secondsCount = 0;
+        var milliSecondsCount = 0;
+
+
+
+        var secondsSpan = document.querySelector('#seconds')
+        var milliSecondsSpan = document.querySelector('#milliSeconds')
+
+
+        var secondsIntervalId;
+        var millisecondsIntervalId;
+
+
+        function secondsCounter(){
+            if(secondsCount<=60){
+            secondsCount++;
+            
+        }
+        else{
+            secondsCount = 0;
+        }
+        if(secondsCount<10){
+        secondsSpan.innerHTML ="0" + secondsCount
+
+        }
+        else{
+            secondsSpan.innerHTML = secondsCount
+
+        }
+
+    }
+
+
+
+    
+    function milliSecondsCounter(){
+        if( milliSecondsCount<=60){
+    
+        milliSecondsCount++;
+        
+    }
+    else{
+        milliSecondsCount = 0;
+    }
+    milliSecondsSpan.innerHTML = milliSecondsCount
+}
+
+
+        function startTime(){
+            secondsIntervalId = setInterval(secondsCounter,1000);
+            millisecondsIntervalId = setInterval(milliSecondsCounter,1);
+        }
+        function stopTime(){
+            clearInterval(secondsIntervalId)
+            clearInterval(millisecondsIntervalId)
+        }
+        function setFlag(){
+            document.getElementById('flag').innerHTML +=`
+            <li>${secondsCount}: ${milliSecondsCount}</li>
+            `
+        }
+    </script>
+</body>
+</html>

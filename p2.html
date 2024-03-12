@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onresize="DeviceCheker()">
+    <div id="content">
+        <h1>This is the heading</h1>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique animi excepturi delectus sed modi veritatis, adipisci molestiae, sequi ratione exercitationem, distinctio ducimus sunt placeat quam odit quis illo corporis perferendis expedita suscipit deleniti quod rerum sapiente! In ab sit quia beatae, similique architecto facilis aliquid fugiat expedita asperiores doloribus reprehenderit praesentium. Odit, nesciunt tempore facere repellat quod quas id. Nam reprehenderit, asperiores dolore vitae, officia iure odit officiis atque perferendis eius ea dolorem, neque consectetur expedita sed eveniet quod minima quos ad eos earum. Atque non illum et natus, aperiam, facere, veritatis amet soluta aspernatur cumque earum delectus velit aliquam?
+    </div>
+    <script>
+        let container = document.getElementById('content')
+        function DeviceCheker(){
+            console.log(screen);
+            if(screen.orientation.type == "landscape-primary"){
+                alert('dont open this website in landscape')
+                console.log('dd');
+
+            }
+            if(screen.availWidth<768){
+                container.style.display = "none"
+
+                document.body.innerHTML = "<h1>Sorry you cannot open this website in mobile</h1 "
+                    document.body.classList.add('error')
+                    document.body.classList.remove('success')
+
+
+            }
+            else{
+                
+                container.style.display = "block"
+                document.body.classList.add('error')
+                document.body.classList.remove('success')
+
+                
+
+
+            }
+        }
+    </script>
+</body>
+</html>

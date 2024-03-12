@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onresize="getWidth()">
+    <div id="result">
+
+    </div>
+    
+    
+
+    <script>
+        let rersult = document.getElementById('result')
+        function getResolution(){
+            console.log(screen);
+            result.innerHTML =`
+            <ol>
+                <li><h1>the width of the screen is:${screen.width}</h1></li>
+                <li><h1>the height of the screen is :${screen.height}</h1></li>
+                <li><h1>the available width of the screen is :${screen.availWidth}</h1></li>
+                <li><h1>the available height of the screen is :${screen.availHeight}</h1></li>
+                <li><h1>the color depth is:${screen.colorDepth}</h1></li>
+                <li><h1>the color depth is:${screen.orientation.angle}</h1></li>
+        
+            </ol>
+        
+            `
+        }
+        getResolution();
+        function getWidth(){
+            //
+
+            switch (screen.availWidth){
+                case 400:
+                document.body.style.backgroundColor ='red'
+                break;
+
+                default:
+                document.body.style.backgroundColor ="yellow"
+                break;
+
+                
+
+
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+
+        }
+        .container{
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #1a1a1a;
+
+        }
+        .clock{
+            width: 200px;
+            height: 100px;
+            background-color: black;
+            outline: 5px solid #fff;
+            border: 1px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            outline-offset: 10px;
+
+        }
+        .time{
+            font-size: 2rem;
+            color: #fff;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            letter-spacing: 2px;
+        }
+        button{
+            width: 70px;
+            height: 50px;
+            
+        }
+        .btns{
+            margin-top: 30px;
+        }
+    </style> -->
+</head>
+<body>
+   <div class="container">
+    <div class="clock">
+        <span class="time" id="time">00:00</span>
+    </div>
+    <div class="btns">
+        
+
+    <button onclick="startTime()">start</button>
+    <button onclick="stopTime()">stop</button>
+
+</div>
+   </div> 
+</div>
+
+   
+
+
+<script>
+    var intervalID;
+    function showTime(){
+        var date = new Date();
+        console.log(date);
+        document.getElementById('time').innerHTML = date.toLocaleTimeString();
+    }
+    //intervalID  = setInterval(showTime,1000)
+
+    function stopTime(){
+        clearInterval (intervalID)
+    }
+    function startTime(){
+        intervalID  = setInterval(showTime,1000)
+    }
+</script>
+
+
+
+
+
+</body>
+</html>

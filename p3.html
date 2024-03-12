@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            min-height: 100vh;
+            background-color: #0c0c0c;
+            color: rgb(211, 211, 9);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+   <code id="result">
+    <h1>Websit status...!</h1>
+   </code>
+
+    <script>
+        let result = document.getElementById('result')
+        function getURL(){
+            console.log('the URL of this page is:', location)
+            result.innerHTML += `
+            <p>HostName: ${location.hostname}</p>
+            <p>Location: ${location.href}</p>
+            <p>Host: ${location.host}</p>
+            <p>Protocal: ${location.protocol}</p>
+            <p>port: ${location.port}</p>
+            <p>pathName: ${location.pathname}</p>
+            <p>Origin: ${location.origin}</p>
+             `
+        }
+
+        //location.pathname = '/p2.html'
+
+        getURL();
+    </script>
+</body>
+</html>
